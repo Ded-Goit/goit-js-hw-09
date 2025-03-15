@@ -67,17 +67,29 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-// Отримуємо контейнер галереї
+// Знаходимо контейнер галереї
 const galleryContainer = document.querySelector('.gallery');
-// Створюємо розмітку для зображень
-const galleryMarkup = images
-  .map(
-    ({ preview, original, description }) =>
-      `<li class="gallery-item"><a class="gallery-link" href="${original}"><img class="gallery-image" src="${preview}" alt="${description}" /></a></li>`
-  )
-  .join('');
-// Додаємо розмітку в DOM
-galleryContainer.innerHTML = galleryMarkup;
+
+// Функція для створення розмітки галереї
+function createMarkup(array) {
+  return array
+    .map(
+      ({ preview, original, description }) => `
+      <li class="gallery-item">
+        <a class="gallery-link" href="${original}">
+          <img 
+            class="gallery-image" 
+            src="${preview}" 
+            alt="${description}" 
+          />
+        </a>
+      </li>`
+    )
+    .join('');
+}
+
+// Додаємо розмітку у галерею
+galleryContainer.insertAdjacentHTML('beforeend', createMarkup(images));
 // Ініціалізуємо SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt', // Використовуємо атрибут alt як підпис

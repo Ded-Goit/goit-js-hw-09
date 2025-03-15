@@ -1,40 +1,57 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
 .feedback-form {
-  background: white;
-  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 408px;
+  height: 296px;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  width: 300px;
 }
 label {
-  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
 }
 input,
 textarea {
   width: 100%;
   padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
+  margin-top: 8px;
+  border: 1px solid #808080;
   border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+input:hover,
+textarea:hover {
+  border-color: black;
+}
+input:active,
+textarea:active {
+  border-color: #808080;
 }
 button {
-  background: #28a745;
   color: white;
-  padding: 10px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 10px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  border-radius: 8px;
+  margin-top: 16px;
 }
 button:hover {
-  background: #218838;
+  background: #6c8cff;
 }
