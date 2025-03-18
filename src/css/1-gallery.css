@@ -19,3 +19,11 @@
   transform: scale(1.05);
   transition: transform 400ms ease-in;
 }
+.sl-overlay {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ) !important; /* Використайте !important для пріоритету */
+}

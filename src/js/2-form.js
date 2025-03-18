@@ -1,4 +1,3 @@
-'use strict';
 const form = document.querySelector('.feedback-form');
 const emailInput = form.elements.email;
 const messageInput = form.elements.message;
