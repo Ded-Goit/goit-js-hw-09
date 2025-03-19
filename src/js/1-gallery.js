@@ -1,8 +1,8 @@
-// Описаний в документації
+// Described in the documentation
 import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
+// Additional style import
 import 'simplelightbox/dist/simple-lightbox.min.css';
-// Масив зображень
+// Array of images
 const images = [
   {
     preview:
@@ -68,10 +68,10 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-// Знаходимо контейнер галереї
+// Find the gallery container
 const galleryContainer = document.querySelector('.gallery');
 
-// Функція для створення розмітки галереї
+// Function to create gallery markup
 function createMarkup(array) {
   return array
     .map(
@@ -89,10 +89,10 @@ function createMarkup(array) {
     .join('');
 }
 
-// Додаємо розмітку у галерею
+// Add markup to gallery
 galleryContainer.insertAdjacentHTML('beforeend', createMarkup(images));
-// Ініціалізуємо SimpleLightbox
+// Initialize SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt', // Використовуємо атрибут alt як підпис
-  captionDelay: 250, // Затримка 250 мс перед показом підпису
+  captionsData: 'alt', // Use alt attribute as caption
+  captionDelay: 250, // Delay 250 ms before showing caption
 });

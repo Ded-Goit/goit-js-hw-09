@@ -20,10 +20,5 @@
   transition: transform 400ms ease-in;
 }
 .sl-overlay {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ) !important; /* Використайте !important для пріоритету */
+  background-color: rgba(46, 47, 66, 0.8) !important;
 }

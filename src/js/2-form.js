@@ -2,13 +2,13 @@ const form = document.querySelector('.feedback-form');
 const emailInput = form.elements.email;
 const messageInput = form.elements.message;
 const STORAGE_KEY = 'feedback-form-state';
-// Об'єкт для збереження даних форми
+// Object for saving form data
 let formData = { email: '', message: '' };
-// Функція для збереження даних у локальне сховище
+// Function for saving data to local storage
 function saveToLocalStorage() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
-// Функція для завантаження збережених даних у форму
+// Function for loading saved data to the form
 function loadFromLocalStorage() {
   const savedData = localStorage.getItem(STORAGE_KEY);
   if (savedData) {
@@ -17,25 +17,25 @@ function loadFromLocalStorage() {
     messageInput.value = formData.message || '';
   }
 }
-// Слухаємо подію input і зберігаємо дані в локальне сховище
+// Listen to the input event and save the data to local storage
 form.addEventListener('input', event => {
   formData[event.target.name] = event.target.value.trim();
   saveToLocalStorage();
 });
-// При завантаженні сторінки перевіряємо сховище
+// When loading the page, check the storage
 document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
-// Обробник події submit
+// Submit event handler
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  // Перевіряємо, чи всі поля заповнені
+  // Check if all fields are filled
   if (!formData.email || !formData.message) {
     alert('Fill please all fields');
     return;
   }
-  // Виводимо об'єкт у консоль
+  // Output the object to the console
   console.log('Form submitted:', formData);
-  // Очищаємо сховище та форму
+  // Clear the storage and the form
   localStorage.removeItem(STORAGE_KEY);
   formData = { email: '', message: '' };
   form.reset();
